@@ -6,15 +6,15 @@
 }
 
 .auth__btn {
-  background: #fff;
-  color: var(--primary-color);
+  background: #344f84b3;
+  color: white;
   font-weight: 400;
   font-size: 15px;
   padding: 3px 10px;
   width: 100%;
   border-radius: 5px;
 }
-.auth__btn button :hover {
+.auth__btn :hover {
   background: darkslategrey;
 }
 .auth__form p {
