@@ -1,7 +1,8 @@
 .auth__form {
   background: var(--primary-color);
-  padding: 40px;
+  padding: 70px 50px;
   border-radius: 5px;
+  width: 100%;
 }
 
 .auth__btn {
@@ -9,11 +10,11 @@
   color: var(--primary-color);
   font-weight: 400;
   font-size: 15px;
-  padding: 3px 80px;
-
+  padding: 3px 10px;
+  width: 100%;
   border-radius: 5px;
 }
-.auth__btn :hover {
+.auth__btn button :hover {
   background: darkslategrey;
 }
 .auth__form p {
@@ -27,4 +28,5 @@
   /* background-color: red; */
   font-size: 12px;
   padding: 3px 80px;
+  width: 100%;
 }
