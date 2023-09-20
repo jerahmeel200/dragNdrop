@@ -10,46 +10,57 @@ const UploadedImg = () => {
   const [tags, setTags] = useState(""); // State for tags
 
   const onDrop = (acceptedFiles) => {
-    Swal.fire({
-      title: "Continue?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Upload!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (acceptedFiles[0].size > 10000000) {
-          alert("Image cannot be more than 10MB");
-        } else {
-          storage
-            .ref(`images/${acceptedFiles[0].name}`)
-            .put(acceptedFiles[0])
-            .then((snapshot) => {
-              setIsLoading(true);
-              snapshot.ref.getDownloadURL().then((url) => {
-                db.collection("images")
-                  .add({
-                    timestamp: timestamp(),
-                    image: url,
-                    tags: tags.split(",").map((tag) => tag.trim()), // Split and trim tags
-                  })
-                  .then(() => {
-                    setIsLoading(false);
-                    Swal.fire("Uploaded successfully!", "success");
-                    setTags(""); // Clear the tags input field
-                  })
-                  .catch(() => {
-                    setIsLoading(false);
-                  });
+    if (tags.trim() === "") {
+      // Check if tags are empty
+      Swal.fire({
+        icon: "error",
+        title: "Please input a tag name",
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000, // Display for 3 seconds
+      });
+    } else {
+      Swal.fire({
+        // icon: "warning",
+        // showCancelButton: true,
+        // confirmButtonColor: "#3085d6",
+        // cancelButtonColor: "#d33",
+        // confirmButtonText: "Upload!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          if (acceptedFiles[0].size > 10000000) {
+            alert("Image cannot be more than 10MB");
+          } else {
+            storage
+              .ref(`images/${acceptedFiles[0].name}`)
+              .put(acceptedFiles[0])
+              .then((snapshot) => {
+                setIsLoading(true);
+                snapshot.ref.getDownloadURL().then((url) => {
+                  db.collection("images")
+                    .add({
+                      timestamp: timestamp(),
+                      image: url,
+                      tags: tags.split(",").map((tag) => tag.trim()), // Split and trim tags
+                    })
+                    .then(() => {
+                      setIsLoading(false);
+                      Swal.fire("Drop was successfully!", "success");
+                      setTags(""); // Clear the tags input field
+                    })
+                    .catch(() => {
+                      setIsLoading(false);
+                    });
+                });
+              })
+              .catch((error) => {
+                console.log(error);
               });
-            })
-            .catch((error) => {
-              console.log(error);
-            });
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   const { isDragActive, getRootProps, getInputProps } = useDropzone({ onDrop });
@@ -91,19 +102,17 @@ const UploadedImgContainer = styled.div`
   text-align: center;
   padding: 20px;
   height: 200px;
-  margin-top:20px;
+  margin-top: 20px;
   svg {
     font-size: 30px;
     color: ${({ isDragActive }) => (isDragActive ? "#1597E5" : "gray")};
     margin-bottom: 10px;
-    display:flex;
-    justify-content:center;
-
-    // margin-left:110px;
+    display: flex;
+    justify-content: center;
   }
   p {
     color: ${({ isDragActive }) => (isDragActive ? "gray" : "inherit")};
   }
-};`;
+`;
 
 export default UploadedImg;
