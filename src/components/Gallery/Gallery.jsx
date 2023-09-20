@@ -13,6 +13,7 @@ const Gallery = () => {
   const [filteredImages, setFilteredImages] = useState([]);
   const [noResults, setNoResults] = useState(false); // State to track no results
   const [searching, setSearching] = useState(false); // State to track search status
+  const [loading, setLoading] = useState(false); // State to track loading
 
   useEffect(() => {
     const unsubscribe = db
@@ -61,23 +62,27 @@ const Gallery = () => {
   // Function to filter images based on search input
   const handleSearch = () => {
     try {
-      const filtered = images?.filter((image) => {
-        const tags = image?.tags;
-        if (Array.isArray(tags) && tags.length > 0) {
-          return tags.some(
-            (tag) =>
-              typeof tag === "string" &&
-              tag.trim() !== "" &&
-              tag.toLowerCase().includes(searchInput?.toLowerCase())
-          );
-        }
-        return false;
-      });
-      setFilteredImages(filtered);
+      setLoading(true); // Set loading to true
+      setTimeout(() => {
+        const filtered = images?.filter((image) => {
+          const tags = image?.tags;
+          if (Array.isArray(tags) && tags.length > 0) {
+            return tags.some(
+              (tag) =>
+                typeof tag === "string" &&
+                tag.trim() !== "" &&
+                tag.toLowerCase().includes(searchInput?.toLowerCase())
+            );
+          }
+          return false;
+        });
+        setFilteredImages(filtered);
 
-      // Set the noResults state based on the search results
-      setNoResults(filtered.length === 0);
-      setSearching(true); // Set searching state to true
+        // Set the noResults state based on the search results
+        setNoResults(filtered.length === 0);
+        setLoading(false); // Set loading to false
+        setSearching(true); // Set searching state to true
+      }, 2000); // Wait for 3 seconds
     } catch (error) {
       console.error("Error filtering images:", error);
     }
@@ -106,7 +111,9 @@ const Gallery = () => {
           {searching ? (
             <button onClick={handleCancelSearch}>Cancel</button>
           ) : (
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch}>
+              {loading ? "Loading..." : "Search"}
+            </button>
           )}
         </SearchContainer>
         <GalleryGrid className="container">

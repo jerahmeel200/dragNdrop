@@ -28,15 +28,19 @@ const Login = () => {
 
       console.log("my user", user);
       if (user.email) {
-        setLoading(true);
         toast.success("Login Successful");
-        navigate("/");
+        // Delay resetting loading to false by 5 seconds
+        setTimeout(() => {
+          setLoading(false);
+          navigate("/");
+        }, 5000);
       }
     } catch (error) {
       setLoading(false);
       toast.error(error.message);
     }
   };
+
   return (
     <Helmet title="login">
       <section>
@@ -76,7 +80,7 @@ const Login = () => {
                     Login
                   </button>
                   <p>
-                    Dont have an accout?{" "}
+                    Dont have an account?{" "}
                     <Link to="/signUp">Create an account</Link>
                   </p>
                 </Form>
