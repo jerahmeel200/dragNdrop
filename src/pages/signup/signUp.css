@@ -1,0 +1,30 @@
+.auth__form {
+  background: var(--primary-color);
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.auth__btn {
+  background: #fff;
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 15px;
+  padding: 3px 80px;
+
+  border-radius: 5px;
+}
+.auth__btn :hover {
+  background: darkslategrey;
+}
+.auth__form p {
+  margin-top: 30px;
+}
+
+.auth__form p a {
+  color: rgba(225, 225, 225, 0.735);
+}
+.form__group input {
+  /* background-color: red; */
+  font-size: 12px;
+  padding: 3px 80px;
+}
