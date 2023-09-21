@@ -13,8 +13,13 @@ import { CSS } from "@dnd-kit/utilities";
 import Navbar from "./navbar/Navbar";
 
 const SortableImages = ({ image }) => {
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({ id: image.id });
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+  } = useSortable({ id: image.id });
   const style = {
     transition,
     transform: CSS.Transform.toString(transform),
@@ -74,7 +79,7 @@ const ImageGallery = () => {
   return (
     <div>
       <Navbar />
-      <SearchBox onSearch={filterImagesByTag} />
+      <Search onSearch={filterImagesByTag} />
       <div className={classes.search_tags}>
         <div
           className={`${classes.tag} ${

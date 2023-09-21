@@ -1,58 +1,46 @@
-# Image Gallery App with Authentication
+# Getting Started with Create React App
 
-Welcome to the Image Gallery App, a user-friendly application that allows authenticated users to view and manage an image gallery. This app uses Firebase for user authentication and offers features such as image search and image rearrangement.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Getting Started
+## Available Scripts
 
-To get started with the Image Gallery App, follow these steps:
+In the project directory, you can run:
 
-### User Authentication
+### `npm start`
 
-1. Access the app and navigate to the login page.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-2. Use the following test credentials for authentication:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-   - Email: user@example.com
-   - Password: 1Password
+### `npm test`
 
-3. Upon successful login, you'll gain access to the image gallery features.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Image Gallery
+### `npm run build`
 
-1. Once authenticated, you'll be directed to the Image Gallery.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-2. Here, you can view a collection of images.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-3. Use the search feature to find specific images by their tags. Enter a keyword in the search bar, and the app will filter images accordingly.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Drag-and-Drop Image Rearrangement
+### `npm run eject`
 
-1. One of the unique features of this app is the ability to rearrange images by dragging and dropping.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-2. Click and hold an image, then drag it to a new position within the gallery.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-3. Release the mouse (or lift your finger on a touch device) to drop the image in its new location.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-4. The image gallery will automatically update to reflect the new arrangement.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Technologies Used
+## Learn More
 
-The Image Gallery App is built using the following technologies:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- **React**: For building the user interface and handling component interactions.
-
-- **Firebase**: For user authentication and data storage.
-
-- **JavaScript**: For app functionality and logic.
-
-- **HTML/CSS**: For structuring the app and styling.
-
-- **React Dnd-kit (Drag and Drop)**: Used to implement the drag-and-drop image rearrangement feature.
-
-## Feedback and Improvements
-
-We welcome your feedback and suggestions to enhance the Image Gallery App. If you encounter any issues, have ideas for improvements, or wish to report a bug, please reach out.
-
-Thank you for using the Image Gallery App! We hope you enjoy exploring and managing your image collection with ease.
-
-Happy browsing and arranging!
+To learn React, check out the [React documentation](https://reactjs.org/).
