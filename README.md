@@ -1,4 +1,4 @@
-#DND Gallery App with Authentication
+#  DND Gallery App with Authentication
 
 Welcome to the DND Gallery App, a user-friendly application designed for authenticated users to effortlessly explore and manage their image collections. This app utilizes Firebase for user authentication and offers a range of features, including image search and the ability to rearrange images.
 
