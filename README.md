@@ -1,10 +1,10 @@
-# Image Gallery App with Authentication
+#DND Gallery App with Authentication
 
-Welcome to the Image Gallery App, a user-friendly application designed for authenticated users to effortlessly explore and manage their image collections. This app utilizes Firebase for user authentication and offers a range of features, including image search and the ability to rearrange images.
+Welcome to the DND Gallery App, a user-friendly application designed for authenticated users to effortlessly explore and manage their image collections. This app utilizes Firebase for user authentication and offers a range of features, including image search and the ability to rearrange images.
 
 ## Getting Started
 
-To kickstart your experience with the Image Gallery App, please follow these initial steps:
+To kickstart your experience with the DND Gallery App, please follow these initial steps:
 
 ### User Authentication
 
@@ -35,10 +35,10 @@ Click and hold onto an image, then drag it to a new position within the gallery.
 
 Release the mouse (or lift your finger on a touch device) to securely position the image in its new location.
 
-The image gallery will promptly update to reflect the fresh arrangement.
+The DND gallery will promptly update to reflect the fresh arrangement.
 
 Technologies Employed
-The Image Gallery App is constructed using the following technologies:
+The DND Gallery App is constructed using the following technologies:
 
 React: Utilized for crafting the user interface and managing component interactions.
 
@@ -51,7 +51,7 @@ HTML/CSS: Leveraged to structure the app and impart a stylish appearance.
 React Dnd-kit (Drag and Drop): Adopted to facilitate the drag-and-drop image rearrangement feature.
 
 Feedback and Enhancements
-We eagerly anticipate your feedback and recommendations to enhance the Image Gallery App. Should you encounter any issues, harbor ideas for enhancements, or wish to report a bug, please do not hesitate to contact us.
+We eagerly anticipate your feedback and recommendations to enhance the DND Gallery App. Should you encounter any issues, harbor ideas for enhancements, or wish to report a bug, please do not hesitate to contact us.
 
 We extend our gratitude for selecting the Image Gallery App! Our aspiration is that you find joy in effortlessly exploring and organizing your image collection.
 
